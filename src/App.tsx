@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import './App.css';
+import Home from './components/Home';
+import Reviews from './components/Reviews';
+import { Column, Row, Container } from './components/Common/components/grid';
+import NavBar from './components/UI/NavBar';
+import Header from './components/UI/Header';
+import CreateReview from './components/CreateReview';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const App = () => 
+<>
+<Row>
+  <Header />
+</Row>
+<BrowserRouter>
+<Row>
+  <NavBar/>
+</Row>
+
+<Row>
+  <Column>
+  <Switch>
+  <Route exact path="/" component={Home}/>
+    <Route exact path="/reviews" component={Reviews}/>
+    <Route exact path="/createReview" component={CreateReview}/>
+  </Switch>
+  </Column>
+  </Row>
+</BrowserRouter>
+</>
+
 
 export default App;
