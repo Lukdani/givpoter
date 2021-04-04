@@ -24,11 +24,13 @@ styled.div<{ padding?: boolean, width?: number, alignment?: string, valign?: boo
   display: ${props => props.valign? 'flex' : ''};
   align-items: ${props => props.valign? 'center' : ''};
   justify-content: ${props => props.halign? alignmentValues[props.halign] : ''};
+  padding-right: ${props => (props.padding ? "20px" : '0')};
 
 `;
 
 export const Container = 
 styled.div
 `width: 100%;
-background-color: '#F0F2F5'
+background-color: '#F0F2F5';
+padding: 20px;
 `;
