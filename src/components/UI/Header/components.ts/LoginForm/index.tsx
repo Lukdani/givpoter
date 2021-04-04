@@ -5,6 +5,7 @@ import DialogContent from "@material-ui/core/DialogContent";
 import DialogTitle from "@material-ui/core/DialogTitle";
 
 import { Button } from "../../../../Common/components/button";
+import { Icon } from "../../../../Common/components/icon";
 
 export interface LoginFormProps {
   handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
@@ -31,8 +32,12 @@ const LoginForm: React.FC<LoginFormProps> = ({
   };
 
   return (
-    <div>
-      <Button onClick={handleClickOpen}>Log ind</Button>
+    <>
+      <Button onClick={handleClickOpen}>
+        {" "}
+        <Icon addMargin="right" size="15px" icon="sign-in-alt" color="white" />
+        Log ind
+      </Button>
       <Dialog
         disableBackdropClick
         disableEscapeKeyDown
@@ -62,12 +67,16 @@ const LoginForm: React.FC<LoginFormProps> = ({
           <Button onClick={submitForm} color="primary">
             Log ind
           </Button>
-          <Button backgroundColor="#bdbdbd" onClick={handleClose} color="primary">
+          <Button
+            backgroundColor="#bdbdbd"
+            onClick={handleClose}
+            color="primary"
+          >
             Afbryd
           </Button>
         </DialogActions>
       </Dialog>
-    </div>
+    </>
   );
 };
 

@@ -25,7 +25,7 @@ const UserMenu: React.FC<UserMenuProps> = ({ username }) => {
         aria-controls="simple-menu"
         aria-haspopup="true"
         onClick={handleClick}
-        backgroundColor="#bdbdbd"
+        backgroundColor="transparent"
       >
         <Icon addMargin="right" color="white" icon="user-circle" />
         {username}
